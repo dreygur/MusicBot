@@ -63,7 +63,7 @@ async def pause(ctx):
   voice = get(client.voice_clients, guild=ctx.guild)
   if voice.is_playing():
     voice.pause()
-    await ctx.send("Music Paused...")
+    await ctx.send("Music Paused... ")
 
 # Resume the Music
 @client.command()
