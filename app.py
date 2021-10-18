@@ -10,7 +10,7 @@ from youtube_dl import YoutubeDL
 load_dotenv()
 
 # Discord Client
-client = commands.Bot(command_prefix=",")
+client = commands.Bot(command_prefix=".")
 
 # Login Event
 @client.event
@@ -84,7 +84,7 @@ async def resume(ctx):
 
 # Volume Controll
 @commands.command()
-async def volume(self, ctx, volume: int):
+async def volume(ctx, volume: int):
   if ctx.voice_client is None:
     return await ctx.send("Not connected to a voice channel.")
 
@@ -93,7 +93,7 @@ async def volume(self, ctx, volume: int):
 
 # Checks users connectivity
 @play.before_invoke
-async def ensure_voice(self, ctx):
+async def ensure_voice(ctx):
   if ctx.voice_client is None:
     if ctx.author.voice:
       await ctx.author.voice.channel.connect()
