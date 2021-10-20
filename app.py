@@ -85,6 +85,7 @@ async def resume(ctx):
 # Volume Controll
 @client.command()
 async def volume(ctx, volume: int):
+  volume = int(volume)
   if ctx.voice_client is None:
     return await ctx.send("Not connected to a voice channel.")
 
