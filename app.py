@@ -83,7 +83,7 @@ async def resume(ctx):
     await ctx.send(":fire: Music Resumed...")
 
 # Volume Controll
-@commands.command()
+@client.command()
 async def volume(ctx, volume: int):
   if ctx.voice_client is None:
     return await ctx.send("Not connected to a voice channel.")
